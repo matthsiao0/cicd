@@ -24,4 +24,4 @@ jobs:
     steps:
       - env:
           OUT: ${{ needs.check.outputs.output1 }}
-        run: cat "$OUT"
+        run: echo "$OUT"

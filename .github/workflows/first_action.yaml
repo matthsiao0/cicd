@@ -13,8 +13,8 @@ jobs:
     - run: pip install robotframework
   check:
     runs-on: ubuntu-latest
-    reports:
-      report1: ${{ steps.step1.reports.test }}
+    outputs:
+      output1: ${{ steps.step1.reports.test }}
     steps:
       - id: step1
         #run: robot -o NONE -l NONE -r NONE >> "$MY_REPO"
@@ -24,5 +24,5 @@ jobs:
     needs: check
     steps:
       - env:
-        REP: ${{ needs.check.reports.report1 }}
+        REP: ${{ needs.check.outputs.output1 }}
         run: cat "$REP"

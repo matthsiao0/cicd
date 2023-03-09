@@ -24,4 +24,4 @@ jobs:
     steps:
       - env:
           OUT: ${{ needs.check.outputs.output1 }}
-        run: echo "$OUT"
+        run: echo "$OUT" >> "$GITHUB_STEP_SUMMARY"

@@ -17,8 +17,8 @@ jobs:
       output1: ${{ steps.step1.outputs.test }}
     steps:
       - id: step1
-        #run: robot -o NONE -l NONE -r NONE >> "$MY_REPO"
-        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        run: robot -o NONE -l NONE -r NONE > "$GITHUB_OUTPUT"
+        #run: echo "test=hello" >> "$GITHUB_OUTPUT"
   output:
     runs-on: ubuntu-latest
     needs: check

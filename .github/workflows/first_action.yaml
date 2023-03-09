@@ -25,4 +25,4 @@ jobs:
     steps:
       - env:
         REP: ${{ needs.check.outputs.output1 }}
-        run: cat "$REP"
+        run: cat "$MY_REPO"

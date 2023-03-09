@@ -1,0 +1,7 @@
+.*
+!.github
+!.github/*.*
+!.gitignore
+!.dockerignore
+!.gitkeep
+!.pre-commit-config.yaml

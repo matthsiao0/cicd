@@ -13,4 +13,4 @@ jobs:
         with:
           test-input: 'Try this input first!'
       - name: Print current time to Summary
-        run: echo "Current Time is ${{ steps.myinput.outputs.time }}" >> "$GITHUB_STEP_SUMMANRY"
+        run: echo "Current Time is ${{ steps.myinput.outputs.time }}" >> "$GITHUB_STEP_SUMMARY"

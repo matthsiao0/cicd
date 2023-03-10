@@ -8,7 +8,7 @@ inputs:
   test-input-one:
     description: 'second action test'
     required: true
-    default: 'It's hard'
+    default: 'Its hard'
 outputs:
   time: # id of output
     description: 'Output current time'

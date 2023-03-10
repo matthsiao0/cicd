@@ -12,11 +12,6 @@ jobs:
         id: myinput
         with:
           test-input: 'Try this input first!'
+          test-input-one: 'How come this not worked'
       - name: Print current time to Summary
         run: echo "Current Time is ${{ steps.myinput.outputs.time }}" >> "$GITHUB_STEP_SUMMARY"
-      - name: Try second input
-        uses: ./
-        id: mysecondinput
-        with:
-          test-input-one: 'This is second input'
-        

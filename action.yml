@@ -1,7 +1,7 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  test-input:
+  test-input: #input id
     description: 'my first action test'
     required: true
     default: 'Basic Input'

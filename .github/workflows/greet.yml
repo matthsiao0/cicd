@@ -10,6 +10,8 @@ jobs:
       - name: my repo's action test
         uses: ./
         id: myinput
+        run: |
+          chmod +x ./entrypoint.sh
         with:
           test-input: 'Try this input first!'
       - name: Print current time to Summary

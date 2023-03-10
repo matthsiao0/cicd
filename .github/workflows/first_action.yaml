@@ -17,8 +17,8 @@ jobs:
           python-version: '3.9'
       - run: pip install robotframework
       - id: step1
-        run: robot -o NONE -l NONE -r NONE testsuites/t.robot > "$GITHUB_OUTPUT"
-        #run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "test=hello" >> "$GITHUB_OUTPUT"
   output:
     runs-on: ubuntu-latest
     needs: check

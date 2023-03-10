@@ -1,15 +1,15 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  test-input:
+    description: 'my first action test'
     required: true
-    default: 'World'
+    default: 'Basic Input'
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'Out put current time'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.test-input }}

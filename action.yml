@@ -7,7 +7,7 @@ inputs:
     default: 'Basic Input'
 outputs:
   time: # id of output
-    description: 'Out put current time'
+    description: 'Output current time'
 runs:
   using: 'docker'
   image: 'Dockerfile'

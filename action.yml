@@ -1,0 +1,15 @@
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  test-input: #input id
+    description: 'my first action test'
+    required: true
+    default: 'Basic Input'
+outputs:
+  time: # id of output
+    description: 'Output current time'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.test-input }}

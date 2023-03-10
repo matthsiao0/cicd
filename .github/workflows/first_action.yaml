@@ -5,24 +5,24 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        cache: 'pip' # caching pip dependencies
-    - run: pip install robotframework
+      - uses: actions/checkout@v3
   check:
     runs-on: ubuntu-latest
+    needs: setup
     outputs:
-      output1: ${{ steps.step1.reports.test }}
+      output1: ${{ steps.step1.outputs.test }}
     steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install robotframework
       - id: step1
-        #run: robot -o NONE -l NONE -r NONE >> "$MY_REPO"
-        run: echo "test=hello" >> "$MY_REPO"
+        run: |
+          echo "test=hello" >> "$GITHUB_OUTPUT"
   output:
     runs-on: ubuntu-latest
     needs: check
     steps:
       - env:
-        REP: ${{ needs.check.outputs.output1 }}
-        run: cat "$MY_REPO"
+          OUT: ${{ needs.check.outputs.output1 }}
+        run: echo "$OUT" >> "$GITHUB_STEP_SUMMARY"

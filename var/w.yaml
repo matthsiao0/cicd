@@ -1,0 +1,5 @@
+chrome: Chrome
+firefox: Firefox
+home: https://swag.live/
+im_over_18: /html/body/div[2]/div/div/div/div/div[1]/div[2]/button
+login: /html/body/div[1]/div/div[31]/header/nav[2]/button[1]

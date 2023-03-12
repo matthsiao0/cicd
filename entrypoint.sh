@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
-echo "time=$time" >> $GITHUB_OUTPUT
-echo "$time" >> $GITHUB_STEP_SUMMARY
-echo robot --version
+robot -r None -l None -o None --variablefile /var/w.yaml /testsuites/ > report.txt
+# cat report.txt
+# cat report.txt >> $GITHUB_STEP_SUMMARY
+pip list >> report.txt
+cat report.txt

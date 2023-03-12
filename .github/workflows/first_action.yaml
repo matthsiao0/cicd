@@ -2,27 +2,13 @@ name: First action
 on:
   [push]
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
   check:
     runs-on: ubuntu-latest
-    needs: setup
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
+    name: Check
     steps:
-      - uses: actions/setup-python@v4
+      - name: check
+        uses: actions/checkout@v3
+      - name: output
+        uses: ./
         with:
-          python-version: '3.9'
-      - run: pip install robotframework
-      - id: step1
-        run: |
-          echo "test=hello" >> "$GITHUB_OUTPUT"
-  output:
-    runs-on: ubuntu-latest
-    needs: check
-    steps:
-      - env:
-          OUT: ${{ needs.check.outputs.output1 }}
-        run: echo "$OUT" >> "$GITHUB_STEP_SUMMARY"
+          test-input: 'My name'

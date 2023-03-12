@@ -5,16 +5,11 @@ inputs:
     description: 'my first action test'
     required: true
     default: 'Basic Input'
-  test-input-one:
-    description: 'second action test'
-    required: true
-    default: 'Its hard'
 outputs:
-  time: # id of output
-    description: 'Output current time'
+  time:
+    description: 'Run time'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.test-input }}
-    - ${{ inputs.test-input-one }}
